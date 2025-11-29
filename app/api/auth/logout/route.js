@@ -1,8 +1,12 @@
+// app/api/auth/logout/route.js  (or route.ts)
 import { NextResponse } from 'next/server';
 import { logout } from '@helpers/auth';
 
-export async function POST() {
+export async function POST(request) {
   await logout();
-  const base = process.env.NEXTAUTH_URL || 'http://localhost:3000';
-  return NextResponse.redirect(base + '/admin/login');
+
+  // Build a proper absolute URL based on the current request
+  const redirectUrl = new URL('/admin/login', request.url);
+
+  return NextResponse.redirect(redirectUrl);
 }
