@@ -61,9 +61,9 @@ export default async function HomePage() {
       <AboutSection data={data.section3 || {}} />
       <HouseRulesSection data={data.section4 || {}} />
       <AmenitiesSection data={data.section5 || {}} />
-      <PlacesToEatSection data={data.section6 || {}} />
-      <TouristAttractionsSection data={data.section7 || {}} />
       <ContactSection data={data.section8 || {}} />
+      <TouristAttractionsSection data={data.section7 || {}} />
+      <PlacesToEatSection data={data.section6 || {}} />
       <FaqSection data={data.section9 || {}} />
     </>
   );

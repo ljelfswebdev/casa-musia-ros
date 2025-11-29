@@ -81,14 +81,14 @@ export default function Header() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const navItems = [
-    'gallery',
-    'about',
-    'rules',
-    'amenities',
-    'eat',
-    'tourist',
-    'contact',
-    'faq',
+    'gallery',   // Galería
+    'about',     // About
+    'rules',     // House Rules
+    'amenities', // Amenities
+    'contact',   // Contact
+    'tourist',   // Attractions
+    'eat',       // Food / Where to Eat
+    'faq',       // FAQs
   ];
 
   const navLinks = navItems.map((id) => ({

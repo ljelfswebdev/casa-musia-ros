@@ -31,10 +31,10 @@ export default function PlacesToEatSection({ data }) {
 
   // Localized section title
   const titles = {
-    es: 'Lugares para Comer',
-    en: 'Places to Eat',
-    fr: 'Endroits où Manger',
-    de: 'Orte zum Essen',
+    es: 'Dónde Comer',
+    en: 'Where to Eat',
+    fr: 'Où Manger',
+    de: 'Wo Man Essen Kann',
   };
   const sectionTitle = titles[lang] || titles.en;
 

@@ -79,7 +79,7 @@ export default function AmenitiesSection({ data }) {
                   </div>
                 )}
                 <div>
-                  {title && <div className="h6">{title}</div>}
+                  {title && <div className="text-base">{title}</div>}
                 </div>
               </motion.div>
             );

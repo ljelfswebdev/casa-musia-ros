@@ -31,12 +31,12 @@ export default function TouristAttractionsSection({ data }) {
   if (!attractions.length) return null;
 
   // Localized section title
-  const titles = {
-    es: 'Atracciones Turísticas',
-    en: 'Tourist Attractions',
-    fr: 'Attractions Touristiques',
-    de: 'Sehenswürdigkeiten',
-  };
+    const titles = {
+      es: 'Lugares de Interés',
+      en: 'Points of Interest',
+      fr: 'Points d’Intérêt',
+      de: 'Sehenswürdigkeiten',
+    };
   const sectionTitle = titles[lang] || titles.en;
 
   const sectionRef = useRef(null);

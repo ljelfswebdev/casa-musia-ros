@@ -74,7 +74,7 @@ export default function HouseRulesSection({ data }) {
                 </div>
 
                 {/* Rule text (plain text) */}
-                <div className="h6">
+                <div className="text-base">
                   {text}
                 </div>
               </motion.div>
