@@ -124,7 +124,7 @@ export default function PlacesToEatSection({ data }) {
                         )}
                       </div>
                       {title && (
-                        <div className="h4">
+                        <div className="text-xl">
                           {title}
                         </div>
                       )}
@@ -180,7 +180,7 @@ export default function PlacesToEatSection({ data }) {
               />
             )}
             <div className="p-4">
-              <div className="h4">
+              <div className="text-xl">
                 {places[activeIndex].title}
               </div>
               <div

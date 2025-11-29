@@ -43,7 +43,7 @@ export default function FaqSection({ data }) {
                     setOpenIndex(isOpen ? null : idx)
                   }
                 >
-                  <span className="h5 max-w-[calc(100%_-_32px)]">{question}</span>
+                  <span className="text-xl max-w-[calc(100%_-_32px)]">{question}</span>
                   <span
                     className={`
                       inline-block transition-transform duration-300

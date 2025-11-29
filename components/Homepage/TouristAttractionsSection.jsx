@@ -129,7 +129,7 @@ export default function TouristAttractionsSection({ data }) {
                         </div>
                 
                           {title && (
-                            <div className="h4">
+                            <div className="text-xl">
                               {title}
                             </div>
                           )}
@@ -187,7 +187,7 @@ export default function TouristAttractionsSection({ data }) {
               />
             )}
             <div className="p-4">
-              <div className="h4">
+              <div className="text-xl">
                 {attractions[activeIndex].title}
               </div>
               <div
