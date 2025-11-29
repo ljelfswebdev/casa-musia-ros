@@ -68,13 +68,13 @@ export default function AmenitiesSection({ data }) {
                 }}
               >
                 {item?.icon && (
-                  <div className="shrink-0 w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
+                  <div className="shrink-0 w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-secondary">
                     <Image
                       src={item.icon}
                       alt={title || 'Amenity icon'}
                       width={80}
                       height={80}
-                      className="w-full h-full object-cover"
+                      className="h-6 w-6 object-contain"
                     />
                   </div>
                 )}
