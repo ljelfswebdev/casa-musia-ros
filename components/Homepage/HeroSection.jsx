@@ -36,7 +36,6 @@ export default function HeroSection({ data }) {
 
   // --- simple typewriter ---
   const [typedStrapline, setTypedStrapline] = useState('');
-
   useEffect(() => {
     setTypedStrapline('');
 
@@ -44,16 +43,22 @@ export default function HeroSection({ data }) {
 
     const plain = rawStrapline.replace(/<[^>]+>/g, '');
     let i = 0;
+    let intervalId;
 
-    const startDelay = setTimeout(() => {
-      const interval = setInterval(() => {
-        setTypedStrapline(plain.slice(0, i + 1));
+    const startDelayId = setTimeout(() => {
+      intervalId = setInterval(() => {
         i++;
-        if (i >= plain.length) clearInterval(interval);
+        setTypedStrapline(plain.slice(0, i));
+        if (i >= plain.length) {
+          clearInterval(intervalId);
+        }
       }, 40);
     }, 700); // wait for title animation
 
-    return () => clearTimeout(startDelay);
+    return () => {
+      clearTimeout(startDelayId);
+      if (intervalId) clearInterval(intervalId);
+    };
   }, [rawStrapline]);
 
   if (!backgroundImage && !title) {
