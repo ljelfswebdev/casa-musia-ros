@@ -12,7 +12,7 @@ const ToasterClient = dynamic(
 );
 
 export const metadata = {
-  title: process.env.NEXT_PUBLIC_PROJECT_NAME || 'La Casa Musia Ros',
+  title: process.env.NEXT_PUBLIC_PROJECT_NAME || 'Casa Masia Ros',
   description:
     process.env.NEXT_PUBLIC_PROJECT_DESCRIPTION ||
     'A Next.js app using ACF styled templates, designed by Lewis Jelfs',
