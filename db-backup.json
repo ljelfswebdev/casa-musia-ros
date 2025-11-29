@@ -1,0 +1,308 @@
+{
+  "database": "test",
+  "exportedAt": "2025-11-29T13:30:46.232Z",
+  "collections": [
+    {
+      "name": "pages",
+      "count": 1,
+      "documents": [
+        {
+          "_id": "692ac18c88a92c849952b8a1",
+          "title": "Homepage",
+          "slug": "homepage",
+          "templateKey": "homepage",
+          "body": "",
+          "createdAt": "2025-11-29T09:49:00.217Z",
+          "updatedAt": "2025-11-29T12:17:18.171Z",
+          "__v": 0,
+          "templateData": {
+            "section1": {
+              "backgroundImage": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+              "title": "La Casa Musia Ros",
+              "strapline_es": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>",
+              "strapline_en": "<p>english</p>",
+              "strapline_fr": "<p>french</p>",
+              "strapline_de": "<p>german</p>"
+            },
+            "section2": {
+              "images": [
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764413600/blog_uploads/rtzxerluq2f2wugphcvr.jpg"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764413607/blog_uploads/pm6hs3rb6mzlrcmjrhu1.jpg"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764413616/blog_uploads/l21ttuum7mvj3jwzij6b.jpg"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764413628/blog_uploads/rmjce4ehpmw8s0vl4byv.jpg"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764413634/blog_uploads/oklzeugblkfhrezlzzzx.jpg"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764413643/blog_uploads/lvoufzle2npr12f0obbu.jpg"
+                }
+              ]
+            },
+            "section3": {
+              "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764414502/blog_uploads/vvsmkppywiue4jsdh5rl.jpg",
+              "title_es": "Acerca de La Casa Musia Ros",
+              "title_en": "About La Casa Musia Ros",
+              "title_fr": "À propos de La Casa Musia Ros",
+              "title_de": "Über La Casa Musia Ros",
+              "body_es": "<p>Este amplio y confortable domicilio ofrece mucho espacio y atractivos extras para disfrutar de días felices bajo el sol del sur de España con un grupo más grande. También podrá preparar deliciosas comidas juntos en la amplia cocina. Jueguen al ping-pong, hagan ejercicio en la sala de fitness y reúnanse para divertidas noches de juegos en el acogedor salón.<br><br>Su terraza cubierta le invita a disfrutar de deliciosas comidas al aire libre. Empiece el día con un buen desayuno, dese un chapuzón en la piscina y organice veladas de barbacoa con vino y velas.<br><br>Descubra las encantadoras playas de la Costa Cálida, pasee por las reservas naturales de los alrededores y conozca la rica historia de Cartagena, donde podrá visitar el impresionante teatro romano o pasear por su encantador casco antiguo. No deje de degustar deliciosas tapas en un acogedor restaurante.</p>",
+              "body_en": "<p>This spacious and comfortable home offers plenty of room and attractive extras to enjoy happy days under the southern Spanish sun with a larger group. You can also prepare delicious meals together in the large kitchen. Play table tennis, work out in the fitness room, and gather for fun game nights in the cosy living room.</p><p>&nbsp;</p><p>The covered terrace invites you to enjoy delicious meals outdoors. Start the day with a good breakfast, take a dip in the pool, and organise barbecue evenings with wine and candlelight.</p><p>&nbsp;</p><p>Discover the charming beaches of the Costa Cálida, stroll through the nearby nature reserves, and explore the rich history of Cartagena, where you can visit the impressive Roman theatre or wander through its enchanting old town. Don’t miss tasting delicious tapas in a cosy restaurant.</p>",
+              "body_fr": "<p>Cette maison spacieuse et confortable offre beaucoup d’espace et de nombreux atouts pour profiter de journées heureuses sous le soleil du sud de l’Espagne avec un grand groupe. Vous pourrez également préparer de délicieux repas ensemble dans la grande cuisine. Jouez au ping-pong, faites de l’exercice dans la salle de sport et retrouvez-vous pour des soirées jeux amusantes dans le salon chaleureux.</p><p>&nbsp;</p><p>La terrasse couverte vous invite à savourer de délicieux repas en plein air. Commencez la journée avec un bon petit-déjeuner, rafraîchissez-vous dans la piscine et organisez des soirées barbecue avec du vin et des bougies.</p><p>&nbsp;</p><p>Découvrez les charmantes plages de la Costa Cálida, promenez-vous dans les réserves naturelles des environs et plongez dans la riche histoire de Carthagène, où vous pourrez visiter l’impressionnant théâtre romain ou flâner dans son ravissant centre historique. Ne manquez pas de goûter de délicieuses tapas dans un restaurant accueillant.</p>",
+              "body_de": "<p>Dieses großzügige und komfortable Haus bietet viel Platz und attraktive Extras, um mit einer größeren Gruppe glückliche Tage in der Sonne Südspaniens zu genießen. In der großen Küche können Sie außerdem gemeinsam köstliche Mahlzeiten zubereiten. Spielen Sie Tischtennis, trainieren Sie im Fitnessraum und kommen Sie für unterhaltsame Spieleabende im gemütlichen Wohnzimmer zusammen.</p><p>&nbsp;</p><p>Die überdachte Terrasse lädt dazu ein, leckere Mahlzeiten im Freien zu genießen. Starten Sie den Tag mit einem guten Frühstück, nehmen Sie ein Bad im Pool und organisieren Sie Grillabende mit Wein und Kerzenschein.</p><p>&nbsp;</p><p>Entdecken Sie die bezaubernden Strände der Costa Cálida, spazieren Sie durch die umliegenden Naturschutzgebiete und lernen Sie die reiche Geschichte von Cartagena kennen, wo Sie das beeindruckende römische Theater besuchen oder durch die stimmungsvolle Altstadt bummeln können. Verpassen Sie es nicht, in einem gemütlichen Restaurant köstliche Tapas zu probieren.</p>"
+            },
+            "section4": {
+              "rules_es": "<p><strong>Reglas de la piscina y seguridad</strong></p><ul><li><strong>Horario de la piscina:</strong> La piscina está abierta de <strong>9:00 a 20:00</strong>. Por favor, respete este horario para el control del ruido.</li><li><strong>La seguridad primero:</strong> <strong>No correr</strong> alrededor de la piscina. Los niños deben ser supervisados por un adulto en todo momento.</li><li><strong>Toallas:</strong> Por favor, use las <strong>toallas azules designadas</strong> para la piscina, no las toallas de baño interiores.</li><li><strong>Salida (Check-out):</strong> Asegúrese de que todas las puertas y ventanas estén <strong>cerradas con llave</strong> al salir.</li></ul>",
+              "rules_en": "<p><strong>Pool &amp; Safety Rules</strong></p><ul><li><strong>Pool Hours:</strong> The pool is open from <strong>9:00 AM to 8:00 PM</strong>. Please observe these hours for noise control.</li><li><strong>Safety First:</strong> <strong>No running</strong> around the pool area. Children must be supervised by an adult at all times.</li><li><strong>Towels:</strong> Please use the <strong>designated blue towels</strong> for the pool, not the indoor bathroom towels.</li><li><strong>Check-out:</strong> Ensure all doors and windows are <strong>locked</strong> upon departure.</li></ul>",
+              "rules_fr": "<p><strong>Règles de la piscine et de sécurité</strong></p><ul><li><strong>Heures de la piscine:</strong> La piscine est ouverte de <strong>9h00 à 20h00</strong>. Veuillez respecter ces heures pour le contrôle du bruit.</li><li><strong>La sécurité avant tout:</strong> <strong>Ne pas courir</strong> autour de la piscine. Les enfants doivent être surveillés par un adulte en tout temps.</li><li><strong>Serviettes:</strong> Veuillez utiliser les <strong>serviettes bleues désignées</strong> pour la piscine, et non les serviettes de la salle de bain intérieure.</li><li><strong>Départ (Check-out):</strong> Assurez-vous que toutes les portes et fenêtres sont <strong>verrouillées</strong> lors de votre départ.</li></ul>",
+              "rules_de": "<p><strong>Pool- &amp; Sicherheitsregeln</strong></p><ul><li><strong>Poolzeiten:</strong> Der Pool ist von <strong>9:00 Uhr bis 20:00 Uhr</strong> geöffnet. Bitte halten Sie diese Zeiten zur Lärmkontrolle ein.</li><li><strong>Sicherheit geht vor:</strong> <strong>Nicht rennen</strong> im Poolbereich. Kinder müssen jederzeit von einem Erwachsenen beaufsichtigt werden.</li><li><strong>Handtücher:</strong> Bitte verwenden Sie die <strong>speziellen blauen Handtücher</strong> für den Pool und nicht die Badetücher für das Haus.</li><li><strong>Check-out:</strong> Stellen Sie sicher, dass alle Türen und Fenster bei der Abreise <strong>verschlossen</strong> sind.</li></ul>"
+            },
+            "section5": {
+              "items": [
+                {
+                  "icon": "https://res.cloudinary.com/ljelfs/image/upload/v1764415912/blog_uploads/pgi3fbpx1vcpxtjb0iiz.png",
+                  "title_es": "Amenitie ES",
+                  "title_en": "Amenitie EN",
+                  "title_fr": "Amenitie FR",
+                  "title_de": "Amenitie DE"
+                },
+                {
+                  "icon": "https://res.cloudinary.com/ljelfs/image/upload/v1764415912/blog_uploads/pgi3fbpx1vcpxtjb0iiz.png",
+                  "title_es": "ES Lorem ipsum dolor sit amet",
+                  "title_en": "EN Lorem ipsum dolor sit amet",
+                  "title_fr": "FR Lorem ipsum dolor sit amet",
+                  "title_de": "DE Lorem ipsum dolor sit amet"
+                },
+                {
+                  "icon": "https://res.cloudinary.com/ljelfs/image/upload/v1764415912/blog_uploads/pgi3fbpx1vcpxtjb0iiz.png",
+                  "title_es": "ES Lorem ipsum dolor sit amet",
+                  "title_en": "EN Lorem ipsum dolor sit amet",
+                  "title_fr": "FR Lorem ipsum dolor sit amet",
+                  "title_de": "DE Lorem ipsum dolor sit amet"
+                },
+                {
+                  "icon": "https://res.cloudinary.com/ljelfs/image/upload/v1764415912/blog_uploads/pgi3fbpx1vcpxtjb0iiz.png",
+                  "title_es": "ES Lorem ipsum dolor sit amet",
+                  "title_en": "EN Lorem ipsum dolor sit amet",
+                  "title_fr": "FR Lorem ipsum dolor sit amet",
+                  "title_de": "DE Lorem ipsum dolor sit amet"
+                },
+                {
+                  "icon": "https://res.cloudinary.com/ljelfs/image/upload/v1764415912/blog_uploads/pgi3fbpx1vcpxtjb0iiz.png",
+                  "title_es": "ES Lorem ipsum dolor sit amet",
+                  "title_en": "EN Lorem ipsum dolor sit amet",
+                  "title_fr": "FR Lorem ipsum dolor sit amet",
+                  "title_de": "DE Lorem ipsum dolor sit amet"
+                },
+                {
+                  "icon": "https://res.cloudinary.com/ljelfs/image/upload/v1764415912/blog_uploads/pgi3fbpx1vcpxtjb0iiz.png",
+                  "title_es": "ES Lorem ipsum dolor sit amet",
+                  "title_en": "EN Lorem ipsum dolor sit amet",
+                  "title_fr": "FR Lorem ipsum dolor sit amet",
+                  "title_de": "DE Lorem ipsum dolor sit amet"
+                },
+                {
+                  "icon": "https://res.cloudinary.com/ljelfs/image/upload/v1764415912/blog_uploads/pgi3fbpx1vcpxtjb0iiz.png",
+                  "title_es": "ES Lorem ipsum dolor sit amet",
+                  "title_en": "EN Lorem ipsum dolor sit amet",
+                  "title_fr": "FR Lorem ipsum dolor sit amet",
+                  "title_de": "DE Lorem ipsum dolor sit amet"
+                }
+              ]
+            },
+            "section6": {
+              "places": [
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Restaurante El Mirador",
+                  "body_es": "<p><strong>Dirección:</strong> Calle del Sol 12, Cartagena</p><p>Terraza con vistas al mar y pescados frescos. Recomendamos la paella de marisco y una ración de croquetas caseras.</p>",
+                  "body_en": "<p><strong>Address:</strong> Calle del Sol 12, Cartagena</p><p>Sea-view terrace with fresh fish and local dishes. We recommend the seafood paella and a portion of homemade croquettes.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Calle del Sol 12, Carthagène</p><p>Terrasse avec vue sur la mer et poissons frais. Nous vous recommandons la paella aux fruits de mer et les croquettes maison.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Calle del Sol 12, Cartagena</p><p>Terrasse mit Meerblick und frischem Fisch. Wir empfehlen die Meeresfrüchte-Paella und eine Portion hausgemachter Kroketten.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "La Bodega del Puerto",
+                  "body_es": "<p><strong>Dirección:</strong> Paseo del Muelle 8, Cartagena</p><p>Taberna típica junto al puerto con tapas y vinos regionales. Recomendamos las patatas bravas y el pulpo a la gallega.</p>",
+                  "body_en": "<p><strong>Address:</strong> Paseo del Muelle 8, Cartagena</p><p>Traditional tavern by the harbour serving tapas and regional wines. We recommend the patatas bravas and Galician-style octopus.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Paseo del Muelle 8, Carthagène</p><p>Taverne typique au bord du port avec tapas et vins régionaux. Nous vous recommandons les patatas bravas et le poulpe à la galicienne.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Paseo del Muelle 8, Cartagena</p><p>Traditionelle Taverne am Hafen mit Tapas und regionalen Weinen. Wir empfehlen Patatas Bravas und Pulpo nach galicischer Art.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Casa Manolo",
+                  "body_es": "<p><strong>Dirección:</strong> Avenida Mediterráneo 45, Los Belones</p><p>Restaurante familiar con ambiente tranquilo. Recomendamos el arroz caldero y el pescado del día a la plancha.</p>",
+                  "body_en": "<p><strong>Address:</strong> Avenida Mediterráneo 45, Los Belones</p><p>Family-run restaurant with a relaxed atmosphere. We recommend the local rice caldero and the grilled fish of the day.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Avenida Mediterráneo 45, Los Belones</p><p>Restaurant familial au cadre calme. Nous recommandons le riz caldero local et le poisson du jour grillé.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Avenida Mediterráneo 45, Los Belones</p><p>Familiengeführtes Restaurant mit entspannter Atmosphäre. Wir empfehlen den lokalen Reis-Caldero und den gegrillten Fisch des Tages.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Tapas La Plaza",
+                  "body_es": "<p><strong>Dirección:</strong> Plaza Mayor 3, La Manga</p><p>Ideal para compartir raciones en una terraza animada. Recomendamos la tabla de quesos, el jamón ibérico y las gambas al ajillo.</p>",
+                  "body_en": "<p><strong>Address:</strong> Plaza Mayor 3, La Manga</p><p>Perfect spot for sharing small plates on a lively terrace. We recommend the cheese board, Iberian ham and garlic prawns.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Plaza Mayor 3, La Manga</p><p>Endroit parfait pour partager des tapas sur une terrasse animée. Nous recommandons le plateau de fromages, le jambon ibérique et les crevettes à l’ail.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Plaza Mayor 3, La Manga</p><p>Perfekt, um Tapas auf einer lebhaften Terrasse zu teilen. Wir empfehlen die Käseplatte, den iberischen Schinken und Knoblauchgarnelen.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Mar y Tierra",
+                  "body_es": "<p><strong>Dirección:</strong> Calle de la Luna 7, Cabo de Palos</p><p>Cocina mediterránea con productos de temporada. Recomendamos el tartar de atún rojo y las verduras a la brasa.</p>",
+                  "body_en": "<p><strong>Address:</strong> Calle de la Luna 7, Cabo de Palos</p><p>Mediterranean cuisine using seasonal products. We recommend the red tuna tartare and the grilled vegetables.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Calle de la Luna 7, Cabo de Palos</p><p>Cuisine méditerranéenne à base de produits de saison. Nous recommandons le tartare de thon rouge et les légumes grillés.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Calle de la Luna 7, Cabo de Palos</p><p>Mediterrane Küche mit saisonalen Produkten. Wir empfehlen das Thunfisch-Tatar und das Grillgemüse.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Bar El Rincón",
+                  "body_es": "<p><strong>Dirección:</strong> Calle Mayor 21, Cartagena</p><p>Bar de tapas informal perfecto para una cena rápida. Recomendamos las albóndigas caseras y el bocadillo de calamares.</p>",
+                  "body_en": "<p><strong>Address:</strong> Calle Mayor 21, Cartagena</p><p>Casual tapas bar, ideal for a quick dinner. We recommend the homemade meatballs and the fried calamari sandwich.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Calle Mayor 21, Carthagène</p><p>Bar à tapas décontracté, parfait pour un dîner rapide. Nous recommandons les boulettes maison et le sandwich aux calmars frits.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Calle Mayor 21, Cartagena</p><p>Lockere Tapas-Bar, ideal für ein schnelles Abendessen. Wir empfehlen die hausgemachten Fleischbällchen und das Calamari-Sandwich.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Chiringuito La Ola",
+                  "body_es": "<p><strong>Dirección:</strong> Playa de Calblanque, s/n</p><p>Chiringuito de playa con ambiente relajado. Recomendamos las sardinas a la brasa y una cerveza bien fría al atardecer.</p>",
+                  "body_en": "<p><strong>Address:</strong> Playa de Calblanque, s/n</p><p>Beach bar with a relaxed vibe. We recommend the grilled sardines and an ice-cold beer at sunset.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Playa de Calblanque, s/n</p><p>Bar de plage à l’ambiance détendue. Nous recommandons les sardines grillées et une bière bien fraîche au coucher du soleil.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Playa de Calblanque, s/n</p><p>Strandbar mit entspannter Atmosphäre. Wir empfehlen die gegrillten Sardinen und ein kühles Bier bei Sonnenuntergang.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Café Central",
+                  "body_es": "<p><strong>Dirección:</strong> Plaza de España 10, Cartagena</p><p>Perfecto para desayunos y meriendas. Recomendamos el café con leche, la tostada con tomate y la tarta de queso casera.</p>",
+                  "body_en": "<p><strong>Address:</strong> Plaza de España 10, Cartagena</p><p>Perfect for breakfast and afternoon snacks. We recommend the café con leche, toast with tomato and the homemade cheesecake.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Plaza de España 10, Carthagène</p><p>Parfait pour le petit-déjeuner et le goûter. Nous recommandons le café con leche, la tartine à la tomate et le cheesecake maison.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Plaza de España 10, Cartagena</p><p>Perfekt für Frühstück und Nachmittagskaffee. Wir empfehlen Café con Leche, Toast mit Tomate und den hausgemachten Käsekuchen.</p>"
+                }
+              ]
+            },
+            "section7": {
+              "attractions": [
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Teatro Romano de Cartagena",
+                  "body_es": "<p><strong>Dirección:</strong> Plaza del Ayuntamiento, Cartagena</p><p>Impresionante teatro romano restaurado con museo. Recomendamos una visita guiada para conocer mejor la historia de la ciudad.</p>",
+                  "body_en": "<p><strong>Address:</strong> Plaza del Ayuntamiento, Cartagena</p><p>Impressive restored Roman theatre with a museum. We recommend a guided tour to better understand the city’s history.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Plaza del Ayuntamiento, Carthagène</p><p>Impressionnant théâtre romain restauré avec musée. Nous recommandons une visite guidée pour mieux comprendre l’histoire de la ville.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Plaza del Ayuntamiento, Cartagena</p><p>Beeindruckendes restauriertes römisches Theater mit Museum. Wir empfehlen eine Führung, um die Geschichte der Stadt besser zu verstehen.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Castillo de la Concepción",
+                  "body_es": "<p><strong>Dirección:</strong> Parque Torres, Cartagena</p><p>Castillo en lo alto de la colina con vistas panorámicas. Recomendamos subir en el ascensor panorámico y disfrutar de la puesta de sol.</p>",
+                  "body_en": "<p><strong>Address:</strong> Parque Torres, Cartagena</p><p>Hilltop castle with panoramic views. We recommend taking the panoramic lift and enjoying the sunset from the viewpoint.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Parque Torres, Carthagène</p><p>Château perché avec vue panoramique. Nous recommandons de prendre l’ascenseur panoramique et de profiter du coucher de soleil.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Parque Torres, Cartagena</p><p>Burg auf einem Hügel mit Panoramablick. Wir empfehlen den Panoramaaufzug und den Sonnenuntergang vom Aussichtspunkt.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Cabo de Palos y su Faro",
+                  "body_es": "<p><strong>Dirección:</strong> Cabo de Palos, s/n</p><p>Pequeño pueblo pesquero con un faro emblemático. Recomendamos pasear por el puerto y subir hasta el faro para ver la costa.</p>",
+                  "body_en": "<p><strong>Address:</strong> Cabo de Palos, s/n</p><p>Small fishing village with an iconic lighthouse. We recommend strolling around the harbour and walking up to the lighthouse for coastal views.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Cabo de Palos, s/n</p><p>Petit village de pêcheurs avec un phare emblématique. Nous recommandons de se promener au port et de monter jusqu’au phare.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Cabo de Palos, s/n</p><p>Kleines Fischerdorf mit ikonischem Leuchtturm. Wir empfehlen einen Spaziergang im Hafen und einen Aufstieg zum Leuchtturm.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Parque Natural de Calblanque",
+                  "body_es": "<p><strong>Dirección:</strong> Acceso desde La Manga y Los Belones</p><p>Parque natural con playas vírgenes y senderos. Recomendamos llevar agua, sombrero y disfrutar de un día de naturaleza sin edificios.</p>",
+                  "body_en": "<p><strong>Address:</strong> Access from La Manga and Los Belones</p><p>Natural park with unspoilt beaches and walking trails. We recommend bringing water, a hat and enjoying a day in untouched nature.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Accès depuis La Manga et Los Belones</p><p>Parc naturel avec plages sauvages et sentiers. Nous recommandons d’emporter de l’eau, un chapeau et de profiter d’une journée en pleine nature.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Zufahrt von La Manga und Los Belones</p><p>Naturschutzgebiet mit unberührten Stränden und Wanderwegen. Wir empfehlen Wasser, einen Hut und einen Tag in der Natur.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Casco Antiguo de Cartagena",
+                  "body_es": "<p><strong>Dirección:</strong> Centro histórico, Cartagena</p><p>Calles peatonales con edificios modernistas y plazas. Recomendamos pasear sin prisa, tomar un café y buscar pequeñas tiendas locales.</p>",
+                  "body_en": "<p><strong>Address:</strong> Historic centre, Cartagena</p><p>Pedestrian streets with modernist buildings and plazas. We recommend wandering slowly, stopping for a coffee and exploring small local shops.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Centre historique, Carthagène</p><p>Rues piétonnes avec bâtiments modernistes et places. Nous recommandons de flâner, prendre un café et découvrir les petites boutiques.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Historisches Zentrum, Cartagena</p><p>Fußgängerzonen mit modernistischen Gebäuden und Plätzen. Wir empfehlen einen Bummel, einen Kaffee und kleine lokale Läden.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Museo Nacional de Arqueología Subacuática (ARQVA)",
+                  "body_es": "<p><strong>Dirección:</strong> Paseo Alfonso XII 22, Cartagena</p><p>Museo dedicado al patrimonio subacuático del Mediterráneo. Recomendamos la colección de tesoros rescatados de antiguos naufragios.</p>",
+                  "body_en": "<p><strong>Address:</strong> Paseo Alfonso XII 22, Cartagena</p><p>Museum dedicated to the underwater heritage of the Mediterranean. We recommend the collection of treasures recovered from ancient shipwrecks.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Paseo Alfonso XII 22, Carthagène</p><p>Musée consacré au patrimoine sous-marin de la Méditerranée. Nous recommandons la collection de trésors provenant d’anciens naufrages.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Paseo Alfonso XII 22, Cartagena</p><p>Museum für das Unterwassererbe des Mittelmeers. Wir empfehlen die Sammlung von Schätzen aus antiken Schiffswracks.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "La Manga del Mar Menor",
+                  "body_es": "<p><strong>Dirección:</strong> La Manga, Costa Cálida</p><p>Franja de tierra entre el Mar Menor y el Mediterráneo. Recomendamos un paseo al atardecer y un baño en las aguas tranquilas del Mar Menor.</p>",
+                  "body_en": "<p><strong>Address:</strong> La Manga, Costa Cálida</p><p>Strip of land between the Mar Menor and the Mediterranean. We recommend an evening walk and a swim in the calm waters of the Mar Menor.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> La Manga, Costa Cálida</p><p>Langue de terre entre la Mar Menor et la Méditerranée. Nous recommandons une promenade au coucher du soleil et un bain dans les eaux calmes.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> La Manga, Costa Cálida</p><p>Landstreifen zwischen Mar Menor und Mittelmeer. Wir empfehlen einen Abendspaziergang und ein Bad im ruhigen Wasser des Mar Menor.</p>"
+                },
+                {
+                  "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764409749/blog_uploads/oxcvdbv71ym2vfpimhen.jpg",
+                  "title": "Puerto de Cabo de Palos",
+                  "body_es": "<p><strong>Dirección:</strong> Puerto deportivo, Cabo de Palos</p><p>Pequeño puerto lleno de barcas y restaurantes. Recomendamos combinar el paseo con una comida de pescado fresco en la zona.</p>",
+                  "body_en": "<p><strong>Address:</strong> Marina, Cabo de Palos</p><p>Small harbour full of boats and restaurants. We recommend combining a stroll with a fresh fish meal nearby.</p>",
+                  "body_fr": "<p><strong>Adresse&nbsp;:</strong> Port de plaisance, Cabo de Palos</p><p>Petit port plein de bateaux et de restaurants. Nous recommandons de combiner la promenade avec un repas de poisson frais.</p>",
+                  "body_de": "<p><strong>Adresse:</strong> Yachthafen, Cabo de Palos</p><p>Kleiner Hafen mit vielen Booten und Restaurants. Wir empfehlen einen Spaziergang mit anschließendem Fischessen.</p>"
+                }
+              ]
+            },
+            "section8": {
+              "image": "https://res.cloudinary.com/ljelfs/image/upload/v1764417953/blog_uploads/gesfvp1olmhy2bcyqz0p.jpg",
+              "title_es": "Información de Contacto",
+              "title_en": "Contact Information",
+              "title_fr": "Informations de Contact",
+              "title_de": "Kontaktinformationen",
+              "body_es": "<p>Hola a todos, soy Jordi y estoy encantado de daros la bienvenida a vuestra casa durante estos días. Mi principal objetivo es que disfrutéis de una estancia cómoda, tranquila y llena de buenos momentos. Si en algún momento necesitáis ayuda, información sobre la zona o simplemente queréis hacerme una consulta, estoy siempre disponible para vosotros. Podéis contactarme directamente en cualquier momento en <strong>+34 664 502 036</strong>.</p><p>&nbsp;</p><p>Conozco muy bien la zona y estaré encantado de recomendaros playas, restaurantes, rutas o actividades que encajen con lo que buscáis. Mi intención es que os sintáis completamente acompañados, pero siempre con total privacidad y libertad para disfrutar la casa a vuestro ritmo.</p><p>&nbsp;</p><p>Espero sinceramente que vuestra experiencia sea maravillosa y que esta casa se convierta en un lugar especial para vosotros. Disfrutad del sol, la tranquilidad, la gastronomía y todo lo que ofrece esta región tan bonita.</p><p>&nbsp;</p><p><strong>¡Que tengáis una estancia inolvidable!</strong></p>",
+              "body_en": "<p>Hi everyone, I’m Jordi and I’m delighted to welcome you to your home for the next few days. My goal is to make sure your stay is comfortable, relaxing, and filled with great memories. If at any moment you need assistance, local tips, or simply have a question, I am always here to help. You can contact me directly anytime at <strong>+34 664 502 036</strong>.</p><p>&nbsp;</p><p>I know the area very well and would be more than happy to recommend beaches, restaurants, walking routes, or activities that suit what you’re looking for. My intention is to be there when you need me, while still giving you complete privacy and the freedom to enjoy the house at your own pace.</p><p>&nbsp;</p><p>I truly hope your experience here is wonderful and that this home becomes a special place for you. Enjoy the sunshine, the peace, the food, and everything this beautiful region has to offer.</p><p>&nbsp;</p><p><strong>Wishing you an unforgettable stay!</strong></p>",
+              "body_fr": "<p>Bonjour à tous, je m’appelle Jordi et je suis ravi de vous accueillir dans votre maison pour les prochains jours. Mon objectif est que votre séjour soit agréable, reposant et rempli de beaux souvenirs. Si vous avez besoin d’aide, d’informations sur la région ou si vous souhaitez simplement me poser une question, je suis toujours disponible pour vous. Vous pouvez me contacter à tout moment au <strong>+34 664 502 036</strong>.</p><p>&nbsp;</p><p>Je connais très bien la région et je serai heureux de vous recommander des plages, des restaurants, des promenades ou des activités en fonction de vos envies. Mon intention est d’être présent lorsque vous en avez besoin, tout en vous laissant une totale intimité et la liberté de profiter de la maison à votre rythme.</p><p>&nbsp;</p><p>J’espère sincèrement que votre expérience sera merveilleuse et que cette maison deviendra pour vous un endroit chaleureux et spécial. Profitez du soleil, du calme, de la gastronomie et de tout ce que cette magnifique région a à offrir.</p><p>&nbsp;</p><p><strong>Je vous souhaite un séjour inoubliable !</strong></p>",
+              "body_de": "<p>Hallo zusammen, ich bin Jordi und freue mich sehr, euch in eurem Zuhause für die nächsten Tage willkommen zu heißen. Mein Ziel ist es, euren Aufenthalt so angenehm, entspannt und schön wie möglich zu gestalten. Wenn ihr Hilfe benötigt, Fragen habt oder Tipps zur Umgebung möchtet, bin ich jederzeit für euch da. Ihr könnt mich jederzeit unter <strong>+34 664 502 036</strong> direkt erreichen.</p><p>&nbsp;</p><p>Ich kenne die Gegend sehr gut und empfehle euch gerne Strände, Restaurants, Spazierwege oder Aktivitäten, die zu euren Interessen passen. Mir ist wichtig, für euch da zu sein, wenn ihr mich braucht, euch aber gleichzeitig volle Privatsphäre und die Freiheit zu geben, das Haus in eurem eigenen Tempo zu genießen.</p><p>&nbsp;</p><p>Ich hoffe wirklich, dass ihr eine wundervolle Zeit hier verbringt und dass dieses Haus für euch zu einem besonderen Ort wird. Genießt die Sonne, die Ruhe, das Essen und alles, was diese schöne Region zu bieten hat.</p><p>&nbsp;</p><p><strong>Ich wünsche euch einen unvergesslichen Aufenthalt!</strong></p>"
+            },
+            "section9": {
+              "faqs": [
+                {
+                  "question_es": "Question ES Question ESQuestion ESQuestion ESQuestion ESQuestion ES",
+                  "question_en": " Question EN Question EN Question EN Question EN Question EN",
+                  "question_fr": "Question FR Question FR Question FR Question FR",
+                  "question_de": " Question DE Question DE Question DE",
+                  "answer_es": "<p>ES Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                  "answer_en": "<p>EN Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                  "answer_fr": "<p>FR Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                  "answer_de": "<p>DE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+                },
+                {
+                  "question_es": "Question ES",
+                  "answer_es": "<p>ES 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                  "answer_en": "<p>EN 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                  "answer_fr": "<p>FR 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                  "answer_de": "<p>DE 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                  "question_en": "Question EN",
+                  "question_fr": "Question FR",
+                  "question_de": "Question DE"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "count": 1,
+      "documents": [
+        {
+          "_id": "692ab792055779ca572739f0",
+          "email": "lewis@example.com",
+          "__v": 0,
+          "passwordHash": "$2a$10$cyZKFVTcztBkhg/pqeVSlOFUEWT3AfrqFzdlyKq3lbCdjKvFO5aDa",
+          "role": "admin"
+        }
+      ]
+    }
+  ]
+}
