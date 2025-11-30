@@ -2,13 +2,14 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from '@/helpers/Image';
 import { useLanguage } from '@/components/lang/LanguageContext';
 
 function pickLocalized(obj, base, lang) {
   if (!obj) return '';
   const order = [lang, 'es', 'en', 'fr', 'de'];
   for (const code of order) {
-    const key = `${base}_${code}`; // e.g. title_en, title_es
+    const key = `${base}_${code}`;
     if (obj[key]) return obj[key];
   }
   return '';
@@ -16,6 +17,7 @@ function pickLocalized(obj, base, lang) {
 
 export default function HouseRulesSection({ data }) {
   const { lang } = useLanguage();
+
   const items = Array.isArray(data?.items) ? data.items : [];
   if (!items.length) return null;
 
@@ -37,7 +39,6 @@ export default function HouseRulesSection({ data }) {
   return (
     <section ref={ref} id="rules" className="py-16 bg-white">
       <div className="container">
-        {/* Title */}
         <motion.h2
           className="h2 mb-8 text-center"
           initial={{ opacity: 0, y: 16 }}
@@ -47,11 +48,10 @@ export default function HouseRulesSection({ data }) {
           {sectionTitle}
         </motion.h2>
 
-        {/* Rules list */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, idx) => {
-            const text = pickLocalized(item, 'title', lang);
-            if (!text) return null;
+            const textHtml = pickLocalized(item, 'title', lang);
+            if (!textHtml) return null;
 
             return (
               <motion.div
@@ -65,15 +65,25 @@ export default function HouseRulesSection({ data }) {
                   delay: 0.15 + idx * 0.08,
                 }}
               >
-                {/* Number circle */}
-                <div className="shrink-0 h-10 w-10 min-h-10 min-w-10 bg-secondary text-white rounded-full flex items-center justify-center font-semibold">
-                  {idx + 1}
+                {/* Icon circle (same style as amenities) */}
+                <div className="shrink-0 h-10 w-10 min-h-10 min-w-10 bg-secondary rounded-full flex items-center justify-center overflow-hidden">
+                  {item.icon ? (
+                    <Image
+                      src={item.icon}
+                      alt={`Rule ${idx + 1}`}
+                      width={40}
+                      height={40}
+                      className="h-6 w-6 object-contain"
+                    />
+                  ) : (
+                    <span className="text-white font-semibold">{idx + 1}</span>
+                  )}
                 </div>
 
-                {/* Rule text (rich HTML supported) */}
+                {/* Rich text */}
                 <div
                   className="text-base prose prose-sm max-w-none"
-                  dangerouslySetInnerHTML={{ __html: text }}
+                  dangerouslySetInnerHTML={{ __html: textHtml }}
                 />
               </motion.div>
             );

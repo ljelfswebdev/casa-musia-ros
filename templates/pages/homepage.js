@@ -112,7 +112,7 @@ export const HOMEPAGE_TEMPLATE = [
   },
 
   // SECTION 4 – House Rules
- {
+  {
     key: 'section4',
     label: 'House Rules',
     fields: [
@@ -121,6 +121,11 @@ export const HOMEPAGE_TEMPLATE = [
         label: 'Rules',
         type: 'repeater',
         of: [
+          {
+            name: 'icon',
+            label: 'Icon',
+            type: 'image',
+          },
           {
             name: 'title_es',
             label: 'Title ES',
@@ -141,7 +146,6 @@ export const HOMEPAGE_TEMPLATE = [
             label: 'Title DE',
             type: 'rich',
           },
-        
         ],
       },
     ],
