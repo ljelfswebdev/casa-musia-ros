@@ -187,7 +187,7 @@ export default function TouristAttractionsSection({ data }) {
                   alt={popupTitle || 'Attraction image'}
                   width={800}
                   height={400}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-72 object-cover"
                 />
               )}
               <div className="p-4">
