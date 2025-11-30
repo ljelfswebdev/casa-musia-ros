@@ -249,8 +249,23 @@ export const HOMEPAGE_TEMPLATE = [
             type: 'image',
           },
           {
-            name: 'title',
-            label: 'Title',
+            name: 'title_es',
+            label: 'Title ES',
+            type: 'text',
+          },
+          {
+            name: 'title_en',
+            label: 'Title EN',
+            type: 'text',
+          },
+          {
+            name: 'title_fr',
+            label: 'Title FR',
+            type: 'text',
+          },
+          {
+            name: 'title_de',
+            label: 'Title DE',
             type: 'text',
           },
           {

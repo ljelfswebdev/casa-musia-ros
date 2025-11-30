@@ -11,6 +11,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+// Generic helper: looks for base_lang (e.g. "title_es", "body_en")
 function pickLocalized(obj, base, lang) {
   if (!obj) return '';
   const order = [lang, 'es', 'en', 'fr', 'de'];
@@ -31,12 +32,12 @@ export default function TouristAttractionsSection({ data }) {
   if (!attractions.length) return null;
 
   // Localized section title
-    const titles = {
-      es: 'Lugares de Interés',
-      en: 'Points of Interest',
-      fr: 'Points d’Intérêt',
-      de: 'Sehenswürdigkeiten',
-    };
+  const titles = {
+    es: 'Lugares de Interés',
+    en: 'Points of Interest',
+    fr: 'Points d’Intérêt',
+    de: 'Sehenswürdigkeiten',
+  };
   const sectionTitle = titles[lang] || titles.en;
 
   const sectionRef = useRef(null);
@@ -99,7 +100,7 @@ export default function TouristAttractionsSection({ data }) {
               }}
             >
               {attractions.map((item, idx) => {
-                const title = item.title; // plain title
+                const title = pickLocalized(item, 'title', lang);
                 if (!title && !item?.image) return null;
 
                 return (
@@ -116,25 +117,23 @@ export default function TouristAttractionsSection({ data }) {
                         delay: 0.1 + idx * 0.12,
                       }}
                     >
-                    <div className="h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden border mb-2">
-                      {item?.image && (
-                            <Image
-                                src={item.image}
-                                alt={title || `Attraction ${idx + 1}`}
-                                width={400}
-                                height={240}
-                                className="w-full h-full object-cover hover:scale-105 transition-transform"
-                            />
-                          )}
+                      <div className="h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden border mb-2">
+                        {item?.image && (
+                          <Image
+                            src={item.image}
+                            alt={title || `Attraction ${idx + 1}`}
+                            width={400}
+                            height={240}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform"
+                          />
+                        )}
+                      </div>
+
+                      {title && (
+                        <div className="text-xl">
+                          {title}
                         </div>
-                
-                          {title && (
-                            <div className="text-xl">
-                              {title}
-                            </div>
-                          )}
-                     
-                
+                      )}
                     </motion.button>
                   </SwiperSlide>
                 );
@@ -167,43 +166,47 @@ export default function TouristAttractionsSection({ data }) {
       </div>
 
       {/* Popup with more info */}
-      {activeIndex != null && attractions[activeIndex] && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
-          <button
-            type="button"
-            className="absolute top-4 right-4 text-white text-xl"
-            onClick={() => setActiveIndex(null)}
-          >
-            ✕
-          </button>
-          <div className="bg-white rounded-xl max-w-2xl w-full mx-4 overflow-hidden">
-            {attractions[activeIndex].image && (
-              <Image
-                src={attractions[activeIndex].image}
-                alt={attractions[activeIndex].title}
-                width={800}
-                height={400}
-                className="w-full h-56 object-cover"
-              />
-            )}
-            <div className="p-4">
-              <div className="text-xl">
-                {attractions[activeIndex].title}
+      {activeIndex != null && attractions[activeIndex] && (() => {
+        const attraction = attractions[activeIndex];
+        const popupTitle = pickLocalized(attraction, 'title', lang);
+        const popupBody = pickLocalized(attraction, 'body', lang);
+
+        return (
+          <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
+            <button
+              type="button"
+              className="absolute top-4 right-4 text-white text-xl"
+              onClick={() => setActiveIndex(null)}
+            >
+              ✕
+            </button>
+            <div className="bg-white rounded-xl max-w-2xl w-full mx-4 overflow-hidden">
+              {attraction.image && (
+                <Image
+                  src={attraction.image}
+                  alt={popupTitle || 'Attraction image'}
+                  width={800}
+                  height={400}
+                  className="w-full h-56 object-cover"
+                />
+              )}
+              <div className="p-4">
+                {popupTitle && (
+                  <div className="text-xl mb-2">
+                    {popupTitle}
+                  </div>
+                )}
+                {popupBody && (
+                  <div
+                    className="prose prose-sm max-w-none"
+                    dangerouslySetInnerHTML={{ __html: popupBody }}
+                  />
+                )}
               </div>
-              <div
-                className="prose prose-sm max-w-none"
-                dangerouslySetInnerHTML={{
-                  __html: pickLocalized(
-                    attractions[activeIndex],
-                    'body',
-                    lang
-                  ),
-                }}
-              />
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </section>
   );
 }
