@@ -16,8 +16,6 @@ function pickLocalized(obj, base, lang) {
 
 export default function HouseRulesSection({ data }) {
   const { lang } = useLanguage();
-
-  // your template uses `items` as the repeater name
   const items = Array.isArray(data?.items) ? data.items : [];
   if (!items.length) return null;
 
@@ -52,20 +50,19 @@ export default function HouseRulesSection({ data }) {
         {/* Rules list */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, idx) => {
-            // uses title_es/title_en/... from your schema
             const text = pickLocalized(item, 'title', lang);
             if (!text) return null;
 
             return (
               <motion.div
                 key={idx}
-                className="flex gap-4 items-center p-4 bg-white/80 border rounded-xl"
+                className="flex gap-4 items-start p-4 bg-white/80 border rounded-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{
                   duration: 0.5,
                   ease: 'easeOut',
-                  delay: 0.15 + idx * 0.08, // stagger
+                  delay: 0.15 + idx * 0.08,
                 }}
               >
                 {/* Number circle */}
@@ -73,10 +70,11 @@ export default function HouseRulesSection({ data }) {
                   {idx + 1}
                 </div>
 
-                {/* Rule text (plain text) */}
-                <div className="text-base">
-                  {text}
-                </div>
+                {/* Rule text (rich HTML supported) */}
+                <div
+                  className="text-base prose prose-sm max-w-none"
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
               </motion.div>
             );
           })}

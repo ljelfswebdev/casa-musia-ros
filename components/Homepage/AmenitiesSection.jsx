@@ -52,8 +52,8 @@ export default function AmenitiesSection({ data }) {
         {/* Amenities grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, idx) => {
-            const title = pickLocalized(item, 'title', lang);
-            if (!title && !item?.icon) return null;
+            const titleHtml = pickLocalized(item, 'title', lang);
+            if (!titleHtml && !item?.icon) return null;
 
             return (
               <motion.div
@@ -71,7 +71,7 @@ export default function AmenitiesSection({ data }) {
                   <div className="shrink-0 w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-secondary">
                     <Image
                       src={item.icon}
-                      alt={title || 'Amenity icon'}
+                      alt={titleHtml || 'Amenity icon'}
                       width={80}
                       height={80}
                       className="h-6 w-6 object-contain"
@@ -79,7 +79,12 @@ export default function AmenitiesSection({ data }) {
                   </div>
                 )}
                 <div>
-                  {title && <div className="text-base">{title}</div>}
+                  {titleHtml && (
+                    <div
+                      className="text-base"
+                      dangerouslySetInnerHTML={{ __html: titleHtml }}
+                    />
+                  )}
                 </div>
               </motion.div>
             );
