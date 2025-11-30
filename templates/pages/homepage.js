@@ -188,6 +188,7 @@ export const HOMEPAGE_TEMPLATE = [
     ],
   },
 
+ 
   // SECTION 6 – Places to Eat
   {
     key: 'section6',
@@ -203,11 +204,28 @@ export const HOMEPAGE_TEMPLATE = [
             label: 'Image',
             type: 'image',
           },
+          // localized titles
           {
-            name: 'title',
-            label: 'Title',
+            name: 'title_es',
+            label: 'Title ES',
             type: 'text',
           },
+          {
+            name: 'title_en',
+            label: 'Title EN',
+            type: 'text',
+          },
+          {
+            name: 'title_fr',
+            label: 'Title FR',
+            type: 'text',
+          },
+          {
+            name: 'title_de',
+            label: 'Title DE',
+            type: 'text',
+          },
+          // localized bodies
           {
             name: 'body_es',
             label: 'Content ES',

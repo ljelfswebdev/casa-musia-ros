@@ -98,7 +98,8 @@ export default function PlacesToEatSection({ data }) {
               }}
             >
               {places.map((p, idx) => {
-                const title = p.title; // plain title
+                const title = pickLocalized(p, 'title', lang);
+
                 return (
                   <SwiperSlide key={idx}>
                     <motion.button
@@ -109,6 +110,7 @@ export default function PlacesToEatSection({ data }) {
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{
                         duration: 0.5,
+                        ease: 'easeOut',
                         delay: 0.1 + idx * 0.12,
                       }}
                     >
@@ -173,7 +175,7 @@ export default function PlacesToEatSection({ data }) {
             {places[activeIndex].image && (
               <Image
                 src={places[activeIndex].image}
-                alt={places[activeIndex].title}
+                alt={pickLocalized(places[activeIndex], 'title', lang)}
                 width={800}
                 height={400}
                 className="w-full h-56 object-cover"
@@ -181,7 +183,7 @@ export default function PlacesToEatSection({ data }) {
             )}
             <div className="p-4">
               <div className="text-xl">
-                {places[activeIndex].title}
+                {pickLocalized(places[activeIndex], 'title', lang)}
               </div>
               <div
                 className="prose prose-sm max-w-none"

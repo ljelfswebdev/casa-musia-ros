@@ -17,10 +17,10 @@ const NAV_LABELS = {
     de: 'Galerie',
   },
   about: {
-    es: 'Sobre',
-    en: 'About',
-    fr: 'À propos',
-    de: 'Über',
+    es: 'Sobre Nosotros',
+    en: 'About Us',
+    fr: 'À propos de nous',
+    de: 'Über uns',
   },
   rules: {
     es: 'Normas',
@@ -82,10 +82,10 @@ export default function Header() {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const navItems = [
-    'gallery',   // Galería
     'about',     // About
-    'rules',     // House Rules
+    'gallery',   // Galería
     'amenities', // Amenities
+    'rules',     // House Rules
     'contact',   // Contact
     'tourist',   // Attractions
     'eat',       // Food / Where to Eat

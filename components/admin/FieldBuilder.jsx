@@ -21,7 +21,7 @@ import {
 
 import { CSS } from '@dnd-kit/utilities';
 
-// Small helper for sortable items
+// Sortable wrapper that exposes handle props to children
 function SortableItem({ id, children }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
@@ -31,11 +31,8 @@ function SortableItem({ id, children }) {
     transition,
   };
 
-  return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      {children}
-    </div>
-  );
+  // children is a render-prop: we pass handle props into the header
+  return children({ setNodeRef, attributes, listeners, style });
 }
 
 export default function FieldBuilder({
@@ -49,27 +46,12 @@ export default function FieldBuilder({
 
   const secData = (key) => data?.[key] || {};
 
-  // 🧲 DnD sensors (one per FieldBuilder)
+  // DnD sensors with little distance threshold
   const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 8 } })
+    useSensor(PointerSensor, {
+      activationConstraint: { distance: 6 },
+    })
   );
-
-  function reorder(sectionKey, fieldName, oldIndex, newIndex) {
-  onChange((prev) => {
-    const sec = prev?.[sectionKey] || {};
-    const arr = Array.isArray(sec[fieldName]) ? [...sec[fieldName]] : [];
-    if (newIndex < 0 || newIndex >= arr.length) return prev; // ignore
-    const reordered = arrayMove(arr, oldIndex, newIndex);
-
-    return {
-      ...prev,
-      [sectionKey]: {
-        ...sec,
-        [fieldName]: reordered,
-      },
-    };
-  });
-}
 
   function updateField(sectionKey, name, value) {
     onChange((prev) => ({
@@ -120,6 +102,24 @@ export default function FieldBuilder({
         [sectionKey]: {
           ...sec,
           [fieldName]: arr,
+        },
+      };
+    });
+  }
+
+  // Move item up/down programmatically (for arrow buttons)
+  function moveRepeaterItem(sectionKey, fieldName, from, to) {
+    if (from === to || from < 0 || to < 0) return;
+    onChange((prev) => {
+      const sec = prev?.[sectionKey] || {};
+      const arr = Array.isArray(sec[fieldName]) ? [...sec[fieldName]] : [];
+      if (from >= arr.length || to >= arr.length) return prev;
+      const reordered = arrayMove(arr, from, to);
+      return {
+        ...(prev || {}),
+        [sectionKey]: {
+          ...sec,
+          [fieldName]: reordered,
         },
       };
     });
@@ -234,7 +234,7 @@ export default function FieldBuilder({
                 );
               }
 
-              // REPEATER (✅ now sortable)
+              // REPEATER
               if (field.type === 'repeater') {
                 const items = Array.isArray(fVal) ? fVal : [];
 
@@ -242,18 +242,21 @@ export default function FieldBuilder({
                   const { active, over } = event;
                   if (!over || active.id === over.id) return;
 
-                  const oldIndex = items.findIndex(
-                    (_, i) => `item-${i}` === active.id
-                  );
-                  const newIndex = items.findIndex(
-                    (_, i) => `item-${i}` === over.id
-                  );
-                  if (oldIndex === -1 || newIndex === -1) return;
-
-                  const reordered = arrayMove(items, oldIndex, newIndex);
+                  const oldIndex = active.id;
+                  const newIndex = over.id;
 
                   onChange((prev) => {
                     const sec = prev?.[section.key] || {};
+                    const arr = Array.isArray(sec[field.name]) ? [...sec[field.name]] : [];
+                    if (
+                      oldIndex < 0 ||
+                      newIndex < 0 ||
+                      oldIndex >= arr.length ||
+                      newIndex >= arr.length
+                    ) {
+                      return prev;
+                    }
+                    const reordered = arrayMove(arr, oldIndex, newIndex);
                     return {
                       ...(prev || {}),
                       [section.key]: {
@@ -272,11 +275,7 @@ export default function FieldBuilder({
                         type="button"
                         className="button button--secondary text-xs"
                         onClick={() =>
-                          addRepeaterItem(
-                            section.key,
-                            field.name,
-                            field.defaultItem || {}
-                          )
+                          addRepeaterItem(section.key, field.name, field.defaultItem || {})
                         }
                       >
                         + Add
@@ -289,76 +288,96 @@ export default function FieldBuilder({
                       onDragEnd={handleDragEnd}
                     >
                       <SortableContext
-                        items={items.map((_, i) => `item-${i}`)}
+                        items={items.map((_, idx) => idx)}
                         strategy={verticalListSortingStrategy}
                       >
                         <div className="space-y-2">
-                          {items.map((item, idx) => {
-                            const itemId = `item-${idx}`;
-
-                            return (
-                              <SortableItem key={itemId} id={itemId}>
-                                <div className="border rounded-xl p-3 space-y-2 bg-white">
-                                  <div className="flex items-center justify-between">
-                                  <div className="flex items-center justify-between">
+                          {items.map((item, idx) => (
+                            <SortableItem id={idx} key={idx}>
+                              {({ setNodeRef, attributes, listeners, style }) => (
+                                <div
+                                  ref={setNodeRef}
+                                  style={style}
+                                  className="border rounded-xl p-3 space-y-2 bg-white"
+                                >
+                                  {/* HEADER: drag + up/down + remove */}
+                                  <div className="flex items-center justify-between gap-2">
                                     <div className="flex items-center gap-2 text-xs font-semibold">
-                                      <span>Item {idx + 1}</span>
-
-                                      {/* Up arrow */}
+                                      {/* Drag handle ONLY – rest of card is normal */}
                                       <button
                                         type="button"
-                                        className="px-2 py-1 text-xs rounded bg-gray-100 hover:bg-gray-200"
+                                        className="w-6 h-6 flex items-center justify-center rounded-full border cursor-grab active:cursor-grabbing"
+                                        {...attributes}
+                                        {...listeners}
+                                        aria-label="Drag to reorder"
+                                      >
+                                        ☰
+                                      </button>
+                                      <span>Item {idx + 1}</span>
+                                    </div>
+
+                                    <div className="flex items-center gap-2">
+                                      {/* Move up */}
+                                      <button
+                                        type="button"
+                                        className="button button--tertiary text-[10px] px-2 py-1"
                                         disabled={idx === 0}
-                                        onClick={() => reorder(section.key, field.name, idx, idx - 1)}
+                                        onClick={() =>
+                                          moveRepeaterItem(
+                                            section.key,
+                                            field.name,
+                                            idx,
+                                            idx - 1
+                                          )
+                                        }
                                       >
                                         ↑
                                       </button>
-
-                                      {/* Down arrow */}
+                                      {/* Move down */}
                                       <button
                                         type="button"
-                                        className="px-2 py-1 text-xs rounded bg-gray-100 hover:bg-gray-200"
+                                        className="button button--tertiary text-[10px] px-2 py-1"
                                         disabled={idx === items.length - 1}
-                                        onClick={() => reorder(section.key, field.name, idx, idx + 1)}
+                                        onClick={() =>
+                                          moveRepeaterItem(
+                                            section.key,
+                                            field.name,
+                                            idx,
+                                            idx + 1
+                                          )
+                                        }
                                       >
                                         ↓
                                       </button>
+                                      {/* Remove */}
+                                      <button
+                                        type="button"
+                                        className="button button--tertiary text-xs"
+                                        onClick={() =>
+                                          removeRepeaterItem(section.key, field.name, idx)
+                                        }
+                                      >
+                                        Remove
+                                      </button>
                                     </div>
-
-                                    <button
-                                      type="button"
-                                      className="button button--tertiary text-xs"
-                                      onClick={() =>
-                                        removeRepeaterItem(section.key, field.name, idx)
-                                      }
-                                    >
-                                      Remove
-                                    </button>
-                                  </div>
                                   </div>
 
+                                  {/* Inner fields */}
                                   {(field.of || []).map((sub) => {
                                     const subVal = item?.[sub.name] ?? '';
                                     const updateSub = (value) =>
-                                      updateRepeaterItem(
-                                        section.key,
-                                        field.name,
-                                        idx,
-                                        { [sub.name]: value }
-                                      );
+                                      updateRepeaterItem(section.key, field.name, idx, {
+                                        [sub.name]: value,
+                                      });
 
                                     if (sub.type === 'text') {
                                       return (
                                         <div key={sub.name}>
-                                          <label className="label">
-                                            {sub.label}
-                                          </label>
+                                          <label className="label">{sub.label}</label>
                                           <input
                                             className="input w-full"
                                             value={subVal}
-                                            onChange={(e) =>
-                                              updateSub(e.target.value)
-                                            }
+                                            onChange={(e) => updateSub(e.target.value)}
                                           />
                                         </div>
                                       );
@@ -367,14 +386,10 @@ export default function FieldBuilder({
                                     if (sub.type === 'image') {
                                       return (
                                         <div key={sub.name}>
-                                          <label className="label">
-                                            {sub.label}
-                                          </label>
+                                          <label className="label">{sub.label}</label>
                                           <CloudinaryUpload
                                             value={subVal}
-                                            onChange={(url) =>
-                                              updateSub(url)
-                                            }
+                                            onChange={(url) => updateSub(url)}
                                           />
                                         </div>
                                       );
@@ -383,16 +398,12 @@ export default function FieldBuilder({
                                     if (sub.type === 'textarea') {
                                       return (
                                         <div key={sub.name}>
-                                          <label className="label">
-                                            {sub.label}
-                                          </label>
+                                          <label className="label">{sub.label}</label>
                                           <textarea
                                             className="input w-full"
                                             rows={sub.rows || 3}
                                             value={subVal}
-                                            onChange={(e) =>
-                                              updateSub(e.target.value)
-                                            }
+                                            onChange={(e) => updateSub(e.target.value)}
                                           />
                                         </div>
                                       );
@@ -401,14 +412,10 @@ export default function FieldBuilder({
                                     if (sub.type === 'rich') {
                                       return (
                                         <div key={sub.name}>
-                                          <label className="label">
-                                            {sub.label}
-                                          </label>
+                                          <label className="label">{sub.label}</label>
                                           <RichTextEditor
                                             value={subVal}
-                                            onChange={(html) =>
-                                              updateSub(html)
-                                            }
+                                            onChange={(html) => updateSub(html)}
                                           />
                                         </div>
                                       );
@@ -417,9 +424,9 @@ export default function FieldBuilder({
                                     return null;
                                   })}
                                 </div>
-                              </SortableItem>
-                            );
-                          })}
+                              )}
+                            </SortableItem>
+                          ))}
                         </div>
                       </SortableContext>
                     </DndContext>
