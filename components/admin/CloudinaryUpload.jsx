@@ -32,17 +32,32 @@ export default function CloudinaryUpload({ value, onChange }) {
   }
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 space-x-2">
       {value && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={value} alt="" className="w-full max-w-xs rounded-md border" />
+        <div className="inline-flex items-center justify-center">
+          {/* Preview image with light grey bg + size limit */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={value}
+            alt=""
+            className="
+              max-h-[200px]
+              w-auto max-w-full
+              rounded-md border
+              bg-gray-200
+              object-contain
+            "
+          />
+        </div>
       )}
+
       <input type="file" accept="image/*" onChange={onFile} />
+
       <input
         className="input w-full"
         placeholder="Or paste image URL"
         value={value || ''}
-        onChange={(e)=>onChange?.(e.target.value)}
+        onChange={(e) => onChange?.(e.target.value)}
       />
     </div>
   );
