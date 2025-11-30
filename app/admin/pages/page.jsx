@@ -98,7 +98,7 @@ export default function AdminPagesList() {
                     Edit
                   </Link>
                   <button
-                    className="button button--tertiary w-full md:w-auto"
+                    className="button button--tertiary w-full md:w-auto !hidden"
                     onClick={() => del(p._id)}
                   >
                     Delete

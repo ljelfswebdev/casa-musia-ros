@@ -4,6 +4,40 @@
 import CloudinaryUpload from '@/components/admin/CloudinaryUpload';
 import RichTextEditor from '@/components/admin/RichTextEditor';
 
+import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+
+import {
+  SortableContext,
+  useSortable,
+  arrayMove,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+
+import { CSS } from '@dnd-kit/utilities';
+
+// Small helper for sortable items
+function SortableItem({ id, children }) {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+      {children}
+    </div>
+  );
+}
+
 export default function FieldBuilder({
   template,
   data,
@@ -14,6 +48,28 @@ export default function FieldBuilder({
   const sections = Array.isArray(template) ? template : [];
 
   const secData = (key) => data?.[key] || {};
+
+  // 🧲 DnD sensors (one per FieldBuilder)
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 8 } })
+  );
+
+  function reorder(sectionKey, fieldName, oldIndex, newIndex) {
+  onChange((prev) => {
+    const sec = prev?.[sectionKey] || {};
+    const arr = Array.isArray(sec[fieldName]) ? [...sec[fieldName]] : [];
+    if (newIndex < 0 || newIndex >= arr.length) return prev; // ignore
+    const reordered = arrayMove(arr, oldIndex, newIndex);
+
+    return {
+      ...prev,
+      [sectionKey]: {
+        ...sec,
+        [fieldName]: reordered,
+      },
+    };
+  });
+}
 
   function updateField(sectionKey, name, value) {
     onChange((prev) => ({
@@ -79,7 +135,9 @@ export default function FieldBuilder({
             type="button"
             onClick={() => setActiveSection(s.key)}
             className={`px-3 py-1 rounded-t-md text-sm ${
-              activeSection === s.key ? 'bg-primary text-white' : 'bg-grey text-black'
+              activeSection === s.key
+                ? 'bg-primary text-white'
+                : 'bg-grey text-black'
             }`}
           >
             {s.label}
@@ -137,7 +195,9 @@ export default function FieldBuilder({
                     <label className="label">{field.label}</label>
                     <RichTextEditor
                       value={fVal || ''}
-                      onChange={(val) => updateField(section.key, field.name, val)}
+                      onChange={(val) =>
+                        updateField(section.key, field.name, val)
+                      }
                     />
                   </div>
                 );
@@ -174,9 +234,36 @@ export default function FieldBuilder({
                 );
               }
 
-              // REPEATER
+              // REPEATER (✅ now sortable)
               if (field.type === 'repeater') {
                 const items = Array.isArray(fVal) ? fVal : [];
+
+                const handleDragEnd = (event) => {
+                  const { active, over } = event;
+                  if (!over || active.id === over.id) return;
+
+                  const oldIndex = items.findIndex(
+                    (_, i) => `item-${i}` === active.id
+                  );
+                  const newIndex = items.findIndex(
+                    (_, i) => `item-${i}` === over.id
+                  );
+                  if (oldIndex === -1 || newIndex === -1) return;
+
+                  const reordered = arrayMove(items, oldIndex, newIndex);
+
+                  onChange((prev) => {
+                    const sec = prev?.[section.key] || {};
+                    return {
+                      ...(prev || {}),
+                      [section.key]: {
+                        ...sec,
+                        [field.name]: reordered,
+                      },
+                    };
+                  });
+                };
+
                 return (
                   <div key={field.name} className="space-y-2">
                     <div className="flex items-center justify-between">
@@ -195,95 +282,147 @@ export default function FieldBuilder({
                         + Add
                       </button>
                     </div>
-                    <div className="space-y-2">
-                      {items.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="border rounded-xl p-3 space-y-2 bg-white"
-                        >
-                          <div className="flex items-center justify-between">
-                            <div className="text-xs font-semibold">
-                              Item {idx + 1}
-                            </div>
-                            <button
-                              type="button"
-                              className="button button--tertiary text-xs"
-                              onClick={() =>
-                                removeRepeaterItem(section.key, field.name, idx)
-                              }
-                            >
-                              Remove
-                            </button>
-                          </div>
 
-                          {(field.of || []).map((sub) => {
-                            const subVal = item?.[sub.name] ?? '';
-                            const updateSub = (value) =>
-                              updateRepeaterItem(
-                                section.key,
-                                field.name,
-                                idx,
-                                { [sub.name]: value }
-                              );
+                    <DndContext
+                      sensors={sensors}
+                      collisionDetection={closestCenter}
+                      onDragEnd={handleDragEnd}
+                    >
+                      <SortableContext
+                        items={items.map((_, i) => `item-${i}`)}
+                        strategy={verticalListSortingStrategy}
+                      >
+                        <div className="space-y-2">
+                          {items.map((item, idx) => {
+                            const itemId = `item-${idx}`;
 
-                            if (sub.type === 'text') {
-                              return (
-                                <div key={sub.name}>
-                                  <label className="label">{sub.label}</label>
-                                  <input
-                                    className="input w-full"
-                                    value={subVal}
-                                    onChange={(e) => updateSub(e.target.value)}
-                                  />
-                                </div>
-                              );
-                            }
+                            return (
+                              <SortableItem key={itemId} id={itemId}>
+                                <div className="border rounded-xl p-3 space-y-2 bg-white">
+                                  <div className="flex items-center justify-between">
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2 text-xs font-semibold">
+                                      <span>Item {idx + 1}</span>
 
-                            if (sub.type === 'image') {
-                              return (
-                                <div key={sub.name}>
-                                  <label className="label">{sub.label}</label>
-                                  <CloudinaryUpload
-                                    value={subVal}
-                                    onChange={(url) => updateSub(url)}
-                                  />
-                                </div>
-                              );
-                            }
+                                      {/* Up arrow */}
+                                      <button
+                                        type="button"
+                                        className="px-2 py-1 text-xs rounded bg-gray-100 hover:bg-gray-200"
+                                        disabled={idx === 0}
+                                        onClick={() => reorder(section.key, field.name, idx, idx - 1)}
+                                      >
+                                        ↑
+                                      </button>
 
-                            if (sub.type === 'textarea') {
-                              return (
-                                <div key={sub.name}>
-                                  <label className="label">{sub.label}</label>
-                                  <textarea
-                                    className="input w-full"
-                                    rows={sub.rows || 3}
-                                    value={subVal}
-                                    onChange={(e) =>
-                                      updateSub(e.target.value)
+                                      {/* Down arrow */}
+                                      <button
+                                        type="button"
+                                        className="px-2 py-1 text-xs rounded bg-gray-100 hover:bg-gray-200"
+                                        disabled={idx === items.length - 1}
+                                        onClick={() => reorder(section.key, field.name, idx, idx + 1)}
+                                      >
+                                        ↓
+                                      </button>
+                                    </div>
+
+                                    <button
+                                      type="button"
+                                      className="button button--tertiary text-xs"
+                                      onClick={() =>
+                                        removeRepeaterItem(section.key, field.name, idx)
+                                      }
+                                    >
+                                      Remove
+                                    </button>
+                                  </div>
+                                  </div>
+
+                                  {(field.of || []).map((sub) => {
+                                    const subVal = item?.[sub.name] ?? '';
+                                    const updateSub = (value) =>
+                                      updateRepeaterItem(
+                                        section.key,
+                                        field.name,
+                                        idx,
+                                        { [sub.name]: value }
+                                      );
+
+                                    if (sub.type === 'text') {
+                                      return (
+                                        <div key={sub.name}>
+                                          <label className="label">
+                                            {sub.label}
+                                          </label>
+                                          <input
+                                            className="input w-full"
+                                            value={subVal}
+                                            onChange={(e) =>
+                                              updateSub(e.target.value)
+                                            }
+                                          />
+                                        </div>
+                                      );
                                     }
-                                  />
-                                </div>
-                              );
-                            }
 
-                            if (sub.type === 'rich') {
-                              return (
-                                <div key={sub.name}>
-                                  <label className="label">{sub.label}</label>
-                                  <RichTextEditor
-                                    value={subVal}
-                                    onChange={(html) => updateSub(html)}
-                                  />
-                                </div>
-                              );
-                            }
+                                    if (sub.type === 'image') {
+                                      return (
+                                        <div key={sub.name}>
+                                          <label className="label">
+                                            {sub.label}
+                                          </label>
+                                          <CloudinaryUpload
+                                            value={subVal}
+                                            onChange={(url) =>
+                                              updateSub(url)
+                                            }
+                                          />
+                                        </div>
+                                      );
+                                    }
 
-                            return null;
+                                    if (sub.type === 'textarea') {
+                                      return (
+                                        <div key={sub.name}>
+                                          <label className="label">
+                                            {sub.label}
+                                          </label>
+                                          <textarea
+                                            className="input w-full"
+                                            rows={sub.rows || 3}
+                                            value={subVal}
+                                            onChange={(e) =>
+                                              updateSub(e.target.value)
+                                            }
+                                          />
+                                        </div>
+                                      );
+                                    }
+
+                                    if (sub.type === 'rich') {
+                                      return (
+                                        <div key={sub.name}>
+                                          <label className="label">
+                                            {sub.label}
+                                          </label>
+                                          <RichTextEditor
+                                            value={subVal}
+                                            onChange={(html) =>
+                                              updateSub(html)
+                                            }
+                                          />
+                                        </div>
+                                      );
+                                    }
+
+                                    return null;
+                                  })}
+                                </div>
+                              </SortableItem>
+                            );
                           })}
                         </div>
-                      ))}
-                    </div>
+                      </SortableContext>
+                    </DndContext>
                   </div>
                 );
               }

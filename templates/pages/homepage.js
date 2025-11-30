@@ -124,22 +124,22 @@ export const HOMEPAGE_TEMPLATE = [
           {
             name: 'title_es',
             label: 'Title ES',
-            type: 'text',
+            type: 'rich',
           },
           {
             name: 'title_en',
             label: 'Title EN',
-            type: 'text',
+            type: 'rich',
           },
           {
             name: 'title_fr',
             label: 'Title FR',
-            type: 'text',
+            type: 'rich',
           },
           {
             name: 'title_de',
             label: 'Title DE',
-            type: 'text',
+            type: 'rich',
           },
         
         ],
@@ -165,22 +165,22 @@ export const HOMEPAGE_TEMPLATE = [
           {
             name: 'title_es',
             label: 'Title ES',
-            type: 'text',
+            type: 'rich',
           },
           {
             name: 'title_en',
             label: 'Title EN',
-            type: 'text',
+            type: 'rich',
           },
           {
             name: 'title_fr',
             label: 'Title FR',
-            type: 'text',
+            type: 'rich',
           },
           {
             name: 'title_de',
             label: 'Title DE',
-            type: 'text',
+            type: 'rich',
           },
         
         ],
