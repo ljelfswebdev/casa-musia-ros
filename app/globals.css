@@ -103,3 +103,22 @@ textarea.form-error {
   @apply
   cursor-not-allowed opacity-40;
 }
+
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-tertiary);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: var(--color-tertiary);
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 4px;
+}
