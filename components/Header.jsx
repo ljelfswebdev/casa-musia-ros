@@ -41,10 +41,10 @@ const NAV_LABELS = {
     de: 'Essen gehen',
   },
   tourist: {
-    es: 'Atracciones',
-    en: 'Attractions',
-    fr: 'Attractions',
-    de: 'Sehenswürdigkeiten',
+    es: 'Qué Visitar',
+    en: 'What to Visit',
+    fr: 'À visiter',
+    de: 'Was man besichtigen sollte',
   },
   contact: {
     es: 'Contactos',
