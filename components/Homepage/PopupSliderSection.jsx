@@ -88,6 +88,7 @@ export default function PopupSliderSection({
                 prevEl: `.${prevClassName}`,
                 nextEl: `.${nextClassName}`,
               }}
+              centerInsufficientSlides
               spaceBetween={16}
               slidesPerView={1}
               breakpoints={{

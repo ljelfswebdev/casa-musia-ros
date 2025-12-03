@@ -58,6 +58,13 @@ const NAV_LABELS = {
     fr: 'FAQ',
     de: 'FAQ',
   },
+
+  supermarkets: {
+    es: 'Supermercados y Tiendas',
+    en: 'Supermarkets & Shops',
+    fr: 'Supermarchés & Boutiques',
+    de: 'Einkaufen',
+  },
 };
 
 export default function Header() {
@@ -89,7 +96,7 @@ export default function Header() {
     'contact',   // Contact
     'tourist',   // Attractions
     'eat',       // Food / Where to Eat
-    'faq',       // FAQs
+    'supermarkets',       // FAQs
   ];
 
   const navLinks = navItems.map((id) => ({

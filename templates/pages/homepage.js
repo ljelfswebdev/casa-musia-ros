@@ -315,16 +315,12 @@ export const HOMEPAGE_TEMPLATE = [
     ],
   },
 
+
   // SECTION 8 – Contact Details
   {
     key: 'section8',
     label: 'Contact Details',
     fields: [
-      {
-        name: 'image',
-        label: 'Portrait Image',
-        type: 'image',
-      },
       {
         name: 'title_es',
         label: 'Title ES',
@@ -345,25 +341,95 @@ export const HOMEPAGE_TEMPLATE = [
         label: 'Title DE',
         type: 'text',
       },
+
+      // Intro rich text (above the lists)
       {
         name: 'body_es',
-        label: 'Content ES',
+        label: 'Intro ES',
         type: 'rich',
       },
       {
         name: 'body_en',
-        label: 'Content EN',
+        label: 'Intro EN',
         type: 'rich',
       },
       {
         name: 'body_fr',
-        label: 'Content FR',
+        label: 'Intro FR',
         type: 'rich',
       },
       {
         name: 'body_de',
-        label: 'Content DE',
+        label: 'Intro DE',
         type: 'rich',
+      },
+
+      // Telephones of interest
+      {
+        name: 'interestPhones',
+        label: 'Telephones of Interest',
+        type: 'repeater',
+        of: [
+          {
+            name: 'number',
+            label: 'Phone Number (tel format, e.g. +34968128600)',
+            type: 'text',
+          },
+          {
+            name: 'body_es',
+            label: 'Content ES',
+            type: 'rich',
+          },
+          {
+            name: 'body_en',
+            label: 'Content EN',
+            type: 'rich',
+          },
+          {
+            name: 'body_fr',
+            label: 'Content FR',
+            type: 'rich',
+          },
+          {
+            name: 'body_de',
+            label: 'Content DE',
+            type: 'rich',
+          },
+        ],
+      },
+
+      // Emergency contacts
+      {
+        name: 'emergencyPhones',
+        label: 'Emergency Contacts',
+        type: 'repeater',
+        of: [
+          {
+            name: 'number',
+            label: 'Phone Number (tel format, e.g. 091)',
+            type: 'text',
+          },
+          {
+            name: 'body_es',
+            label: 'Content ES',
+            type: 'rich',
+          },
+          {
+            name: 'body_en',
+            label: 'Content EN',
+            type: 'rich',
+          },
+          {
+            name: 'body_fr',
+            label: 'Content FR',
+            type: 'rich',
+          },
+          {
+            name: 'body_de',
+            label: 'Content DE',
+            type: 'rich',
+          },
+        ],
       },
     ],
   },
@@ -422,4 +488,64 @@ export const HOMEPAGE_TEMPLATE = [
       },
     ],
   },
+  {
+    key: 'section10',
+    label: 'Supermarkets',
+    fields: [
+      {
+        name: 'supermarkets',
+        label: 'Supermarkets',
+        type: 'repeater',
+        of: [
+          {
+            name: 'image',
+            label: 'Image',
+            type: 'image',
+          },
+          {
+            name: 'title_es',
+            label: 'Title ES',
+            type: 'text',
+          },
+          {
+            name: 'title_en',
+            label: 'Title EN',
+            type: 'text',
+          },
+          {
+            name: 'title_fr',
+            label: 'Title FR',
+            type: 'text',
+          },
+          {
+            name: 'title_de',
+            label: 'Title DE',
+            type: 'text',
+          },
+          {
+            name: 'body_es',
+            label: 'Content ES',
+            type: 'rich',
+          },
+          {
+            name: 'body_en',
+            label: 'Content EN',
+            type: 'rich',
+          },
+          {
+            name: 'body_fr',
+            label: 'Content FR',
+            type: 'rich',
+          },
+          {
+            name: 'body_de',
+            label: 'Content DE',
+            type: 'rich',
+          },
+        ],
+      },
+    ],
+  },
+
+  
 ];

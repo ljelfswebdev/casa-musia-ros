@@ -9,7 +9,7 @@ const GallerySection = NextDynamic(
 );
 const AboutSection = NextDynamic(
   () => import('@/components/Homepage/AboutSection'),
-  { ssr: false }
+  { ssr: true }
 );
 const HouseRulesSection = NextDynamic(
   () => import('@/components/Homepage/HouseRulesSection'),
@@ -29,6 +29,11 @@ const TouristAttractionsSection = NextDynamic(
 );
 const ContactSection = NextDynamic(
   () => import('@/components/Homepage/ContactSection'),
+  { ssr: false }
+);
+
+const SupermarketsSection = NextDynamic(
+  () => import('@/components/Homepage/SupermarketsSection'),
   { ssr: false }
 );
 const FaqSection = NextDynamic(
@@ -64,6 +69,7 @@ export default async function HomePage() {
       <ContactSection data={data.section8 || {}} />
       <TouristAttractionsSection data={data.section7 || {}} />
       <PlacesToEatSection data={data.section6 || {}} />
+      <SupermarketsSection data={data.section10 || {}} />
       <FaqSection data={data.section9 || {}} />
     </>
   );
